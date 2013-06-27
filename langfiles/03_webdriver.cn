@@ -137,10 +137,15 @@ javascript方法“注入”到浏览器中，并使用javascript来驱动浏览
 <p>为了安装Selenium，在开发时就需要搭建一个项目，在该项目中使用Selenium来编写程序。如何使用编程语言和开发环境来安装Selenium。</p>
 <div class="section" id="java">
 <h3>Java<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h3>
-<p>建立一个Selenium 2.0 Java项目最简单的方法是使用Maven。Maven会把java bindings(Selenium 2.0 java客户库)和所有依赖项下载下来,然后Maven会按照pom.xml文件(项目配置)来给你建立项目。 
-项目建立好之后, 你可以把maven项目导入到你喜欢的IDE中, 如：IntelliJ IDEA或者Eclipse。</p>
-<p>首先,创建一个文件夹来放你的Selenium项目文件。然后，用Maven来创建一个pom.xml文件，你可以用文件编辑器来创建该配置文件。在此，我们就不介绍pom.xml文件的详细内容了，
-也不介绍如何使用Maven了，因为市面上已经有很不错的参考文档了。你的pom.xml文件看起来是这个样子的。在你创建的项目文件夹中创建这个文件。</p>
+<p>The easiest way to set up a Selenium 2.0 Java project is to use Maven.  Maven will download the
+java bindings (the Selenium 2.0 java client library) and all its dependencies, and will create the
+project for you, using a maven pom.xml (project configuration) file.  Once you’ve done this, you
+can import the maven project into your preferred IDE, IntelliJ IDEA or Eclipse.</p>
+<p>First, create a folder to contain your Selenium project files.  Then, to use Maven, you need a
+pom.xml file.  This can be created with a text editor.  We won’t teach the
+details of pom.xml files or for using Maven since there are already excellent references on this.
+Your pom.xml file will look something like this.  Create this file in the folder you created for
+your project.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
                  <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
@@ -178,23 +183,31 @@ javascript方法“注入”到浏览器中，并使用javascript来驱动浏览
 <span class="nt">&lt;/project&gt;</span>
 </pre></div>
 </div>
-<p>请确定你使用的是最新的版本号。在写这篇文章的时候，上面列出来的版本号都是最新的，但是在Selenium 2.0发布后，马上会频繁的发布新的版本。
-请去<a class="reference external" href="http://seleniumhq.org/download/maven.html">Maven下载页面</a>检查最新的版本号，并修改上面相应的依赖项。</p>
-<p>在命令行里输入: CD 项目目录 run maven</p>
+<p>Be sure you specify the most current version.  At the time of writing, the version listed above was
+the most current, however there were frequent releases immediately after the release of Selenium 2.0.
+Check the <a class="reference external" href="http://seleniumhq.org/download/maven.html">Maven download page</a> for the current release and edit the above dependency accordingly.</p>
+<p>Now, from a command-line, CD into the project directory and run maven as follows.</p>
 <div class="highlight-bash"><div class="highlight"><pre>mvn clean install
 </pre></div>
 </div>
-<p>这条命令会把Selenium及其所有的依赖项下载下来，并添加到项目中。</p>
-<p>最后，把项目导入到你熟悉的开发环境。对开发环境不熟悉的人，我们在附录中提供了开发环境的信息。</p>
-<p><a class="reference internal" href="appendix_installing_java_driver_Sel20_via_maven.jsp#importing-maven-into-intellij-reference"><em>在IntelliJ IDEA导入maven项目</em></a>.
-<a class="reference internal" href="appendix_installing_java_driver_Sel20_via_maven.jsp#importing-maven-into-eclipse-reference"><em>在Eclipse里导入maven项目</em></a>.</p>
+<p>This will download Selenium and all its dependencies and will add them to the project.</p>
+<p>Finally, import the project into your preferred development environment.  For those not familiar
+with this, we’ve provided an appendix which shows this.</p>
+<p><a class="reference internal" href="appendix_installing_java_driver_Sel20_via_maven.jsp#importing-maven-into-intellij-reference"><em>Importing a maven project into IntelliJ IDEA</em></a>.
+<a class="reference internal" href="appendix_installing_java_driver_Sel20_via_maven.jsp#importing-maven-into-eclipse-reference"><em>Importing a maven project into Eclipse</em></a>.</p>
 </div>
 <div class="section" id="c">
 <h3>C#<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h3>
-<p>对于Selenium 2.2.0, C#绑定被分为一套有符号的dlls和其他依赖的dlls。早在Selenium 2.2.0之前, 所以Selenium的dll都是无符号的。为了在项目里添加Selenium,你只需要在这儿<a class="reference external" href="https://code.google.com/p/selenium/downloads/list">https://code.google.com/p/selenium/downloads/list</a>下载最新的
-selenium-dotnet zip压缩文件。如果你使用的是Windows Vista或者更新的版本, 在解压前，你需要给zip文件解除锁定: 右击zip文件，点击“属性”，点击“解除锁定”，然后点击“OK"。</p>
-<p>将zip文件的内容进行解压, 在Visual Studio (或者IDE)的项目里，给每个解压的dll添加一个附注。.</p>
-<p>官方的NuGet包:
+<p>As of Selenium 2.2.0, the C# bindings are distributed as a set of signed dlls along with other
+dependency dlls. Prior to 2.2.0, all Selenium dll’s were unsigned.
+To include Selenium in your project, simply download the latest
+selenium-dotnet zip file from <a class="reference external" href="https://code.google.com/p/selenium/downloads/list">https://code.google.com/p/selenium/downloads/list</a>.
+If you are using Windows Vista or above, you should unblock the zip file before
+unzipping it: Right click on the zip file, click “Properties”, click “Unblock”
+and click “OK”.</p>
+<p>Unzip the contents of the zip file, and add a reference to each of the unzipped
+dlls to your project in Visual Studio (or your IDE of choice).</p>
+<p>Official NuGet Packages:
 <a class="reference external" href="http://www.nuget.org/List/Packages/Selenium.RC">RC</a>
 <a class="reference external" href="http://www.nuget.org/List/Packages/Selenium.WebDriver">WebDriver</a>
 <a class="reference external" href="http://www.nuget.org/List/Packages/Selenium.WebDriverBackedSelenium">WebDriverBackedSelenium</a>
